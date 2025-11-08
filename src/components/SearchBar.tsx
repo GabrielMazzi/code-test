@@ -11,6 +11,7 @@ type Props = {
 export default function SearchBar({ onSearch, initial = '' }: Props) {
     const [value, setValue] = useState(initial);
 
+    // Handle form submission
     function submit(e?: FormEvent) {
         e?.preventDefault();
         const trimmed = value.trim();
