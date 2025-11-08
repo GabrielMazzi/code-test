@@ -64,21 +64,6 @@ npm run build
 npm run preview
 ```
 
-## 🔑 GitHub Token Configuration (Optional)
-
-The GitHub API allows searches without authentication, but with a reduced rate limit. To increase this limit, you can configure a Personal Access Token:
-
-1. Generate a token at: [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens)
-
-2. Create a `.env` file in the project root:
-```env
-VITE_GITHUB_TOKEN=your_token_here
-```
-
-3. Restart the development server
-
-> **Note:** The token is optional and the application works without it, but with a lower request limit.
-
 ## 📁 Project Structure
 
 ```
