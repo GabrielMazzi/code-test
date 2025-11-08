@@ -1,93 +1,140 @@
-# React + TypeScript + Vite
+# bitFlyer Coding Test - GitHub Repository Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 About the Project
 
-Currently, two official plugins are available:
+This is a technical test developed for the **bitFlyer** selection process. The project consists of a web application for searching GitHub repositories using the official GitHub API.
 
+**Candidate:** Gabriel Mazzi Ferreira Franco
 
-## React Compiler
+## 🚀 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - Library for building user interfaces
+- **TypeScript** - JavaScript superset with static typing
+- **Vite** - Build tool and dev server
+- **Material-UI (MUI)** - Design system and UI components
+- **GitHub REST API** - Repository search API
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔍 Search GitHub repositories by keywords
+- 📄 Paginated list of results (10 per page)
+- ⭐ Display repository information:
+  - Full name
+  - Description (limited to 200 characters)
+  - Star count
+  - Primary language
+- 🔗 Direct link to each repository
+- 📱 Responsive interface with Material-UI components
+- ⚡ GitHub Token authentication support (optional)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ How to Run the Project
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (version 16 or higher)
+- npm or yarn
+
+### Installation and Execution
+
+1. Clone the repository:
+```bash
+git clone https://github.com/GabrielMazzi/coding-test.git
+cd coding-test
 ```
 
-## GitHub Search (Adicionado)
-
-Este projeto agora inclui uma pequena UI para buscar repositórios do GitHub usando a API de Search. Instruções rápidas:
-
-- Para rodar em desenvolvimento:
-
+2. Install dependencies:
 ```bash
 npm install
+```
+
+3. Run the project in development mode:
+```bash
 npm run dev
 ```
 
-- A API do GitHub permite buscas sem autenticação, mas com limites baixos de rate limit. Para aumentar os limites, crie um Personal Access Token no GitHub e defina a variável de ambiente Vite:
-
-Crie um arquivo `.env` na raiz com:
-
+4. Access in the browser:
 ```
-VITE_GITHUB_TOKEN=seu_token_aqui
+http://localhost:5173
 ```
 
-Depois reinicie o servidor de dev. A busca usa `import.meta.env.VITE_GITHUB_TOKEN` se presente.
+### Production Build
 
-Componente principal: `src/App.tsx`. Serviço que faz a chamada: `src/services/github.ts`.
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
 ```
+
+## 🔑 GitHub Token Configuration (Optional)
+
+The GitHub API allows searches without authentication, but with a reduced rate limit. To increase this limit, you can configure a Personal Access Token:
+
+1. Generate a token at: [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens)
+
+2. Create a `.env` file in the project root:
+```env
+VITE_GITHUB_TOKEN=your_token_here
+```
+
+3. Restart the development server
+
+> **Note:** The token is optional and the application works without it, but with a lower request limit.
+
+## 📁 Project Structure
+
+```
+src/
+├── api/
+│   └── search.ts          # GitHub API service calls
+├── components/
+│   ├── List.tsx           # Repository list (Material-UI)
+│   ├── Pagination.tsx     # Pagination component
+│   └── SearchBar.tsx      # Search bar with icon
+├── App.tsx                # Main component
+├── App.css                # Global styles
+└── main.tsx               # Application entry point
+```
+
+## 🧪 Available Scripts
+
+- `npm run dev` - Starts the development server
+- `npm run build` - Generates production build
+- `npm run preview` - Preview production build
+- `npm run lint` - Runs ESLint linter
+
+## 🎯 Technical Decisions
+
+### Why Material-UI?
+- Consistent and professional design system
+- Accessible and responsive components by default
+- Facilitates maintenance and scalability
+- Good integration with React and TypeScript
+
+### Why Vite?
+- Extremely fast build
+- Efficient Hot Module Replacement (HMR)
+- Minimal configuration
+- Native TypeScript support
+
+### Architecture
+- Clear separation between API logic (`api/search.ts`) and UI components
+- Reusable and modular components
+- Strong typing with TypeScript to prevent errors
+
+## 📝 Requirements Met
+
+✅ Repository search via GitHub API  
+✅ Paginated list of results  
+✅ Clean and responsive interface  
+✅ TypeScript with complete typing  
+✅ Proper componentization  
+✅ Error handling and loading states  
+✅ Clean and well-documented code  
+
+## 👤 Author
+
+**Gabriel Mazzi Ferreira Franco**
+- GitHub: [@GabrielMazzi](https://github.com/GabrielMazzi)
+
+---
+
+**Developed as part of the bitFlyer selection process**
