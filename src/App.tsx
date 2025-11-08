@@ -1,4 +1,4 @@
-// bitFlyer - SPOTTED Inc. Coding Test - GitHub Repositories Search
+// Coding Test - GitHub Repositories Search
 // Gabriel Mazzi Ferreira Franco
 
 import { useState, useEffect } from 'react';
@@ -67,7 +67,7 @@ function App() {
   return (
     <div style={{ maxWidth: 900, margin: '28px auto', padding: '0 16px' }}>
       <h1>GitHub Repositories Search</h1>
-      <h4>bitFlyer Coding Test - Gabriel Franco</h4>
+      <h4>Coding Test - Gabriel Franco</h4>
 
       <SearchBar onSearch={handleSearch} initial={query} />
 

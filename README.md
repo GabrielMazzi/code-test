@@ -1,8 +1,8 @@
-# bitFlyer Coding Test - GitHub Repository Search
+# Coding Test - GitHub Repository Search
 
 ## 📋 About the Project
 
-This is a technical test developed for the **bitFlyer** selection process. The project consists of a web application for searching GitHub repositories using the official GitHub API.
+This is a technical test developed for a selection process. The project consists of a web application for searching GitHub repositories using the official GitHub API.
 
 **Candidate:** Gabriel Mazzi Ferreira Franco
 
@@ -122,4 +122,4 @@ src/
 
 ---
 
-**Developed as part of the bitFlyer selection process**
+**Developed as part of a selection process**
